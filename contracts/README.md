@@ -1,11 +1,12 @@
-# Sample Hardhat Project
+# Community Token Contracts 
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+This project uses Hardhat for management of contract and deployments to EVM compatible chains.
 
 Try running some of the following tasks:
 
 ```shell
 npx hardhat help
+npx hardhat compile
 npx hardhat test
 GAS_REPORT=true npx hardhat test
 npx hardhat node
