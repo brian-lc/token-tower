@@ -1,9 +1,11 @@
 import { ethers } from "hardhat";
+import * as dotenv from 'dotenv' 
+dotenv.config()
 
 async function main() {
 
   const MyCT = await ethers.getContractFactory("MyCommunityToken");
-  const myCT = await MyCT.deploy();
+  const myCT = await MyCT.deploy(process.env.MINTER_ADDRESS!);
   
   await myCT.deployed();
 
