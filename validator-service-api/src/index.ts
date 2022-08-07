@@ -27,7 +27,9 @@ export default {
 	): Promise<Response> {
 		// Process POST body as text with token address and gps location
 		if (request.method == 'POST') {
-			return new Response(`You posted: ${await request.text()}`);
+			const bodyText = await request.text();
+			console.log(`Someone posted: ${bodyText}`)
+			return new Response(`You posted: ${bodyText}`);
 		}
 		return new Response("HTTP POST a string with format '<0xaddress>|<latitude>|<longitude>'");
 	},
