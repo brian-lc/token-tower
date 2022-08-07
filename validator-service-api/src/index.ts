@@ -25,6 +25,10 @@ export default {
 		env: Env,
 		ctx: ExecutionContext
 	): Promise<Response> {
-		return new Response("Hello World!");
+		// Process POST body as text with token address and gps location
+		if (request.method == 'POST') {
+			return new Response(`You posted: ${await request.text()}`);
+		}
+		return new Response("HTTP POST a string with format '<0xaddress>|<latitude>|<longitude>'");
 	},
 };
